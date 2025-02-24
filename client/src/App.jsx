@@ -18,6 +18,7 @@ import LicenseList from './components/licence/licenceslist';
 import ReportsList from './components/reports/reportlist';
 import VehicleList from './components/vehicle/vehiclelist';
 import Unauthorized from './unauthorized';
+import ProfileCard from './profile';
 
 const user = JSON.parse(localStorage.getItem('user'))?.user;
 
@@ -34,6 +35,8 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignupPage />} />
+          <Route path="/profile" element={<ProfileCard />} />
+          {/* /profile */}
 
           {/*  admin */}
           {
@@ -72,6 +75,7 @@ function App() {
             user?.role === "Citizen" && (
               <>
                 <Route path="/citizen" element={<CitizenPage />} />
+                
               </>
             )
 

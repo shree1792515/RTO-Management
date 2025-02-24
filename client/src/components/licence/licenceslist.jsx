@@ -51,7 +51,7 @@ const LicenseList = () => {
      const data= await updateLicensestatus(licenseId,newStatus)
 
     
-     window.location.reload();
+    //  window.location.reload();
       
     } catch (error) {
       console.error("Error updating status:", error);

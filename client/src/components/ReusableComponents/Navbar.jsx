@@ -9,6 +9,11 @@ const RTONavbar = () => {
 
     const user = JSON.parse(localStorage.getItem('user'))?.user;
 
+    const logout=()=>{
+        localStorage.removeItem("user")
+        navigate("/login")
+    }
+
 
 
     const services = () => {
@@ -36,8 +41,17 @@ const RTONavbar = () => {
                 </Typography>
                 <Button color="inherit" onClick={() => navigate("/")}>Home</Button>
                 <Button color="inherit" onClick={services}>Services</Button>
-                <Button color="inherit">About</Button>
-                <Button color="inherit">Contact</Button>
+                {
+                    user ? <>
+                        <Button color="inherit" onClick={()=>navigate("/profile")} >Profile</Button>
+                        <Button color="inherit" onClick={logout} >Logout</Button>
+                    </> : <>
+                        <Button variant="primary" size="lg">Login</Button>
+                        <Button variant="secondary" size="lg">Sign Up</Button>
+                    </>
+                }
+
+
             </Toolbar>
         </AppBar>
     );

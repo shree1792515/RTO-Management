@@ -1,9 +1,22 @@
+const User = require('../models/User');
 const Vehicle = require('../models/Vehicle');
+const { sendVehicleregisterationEmail } = require('../utils/emailService');
 
 // Register a new vehicle
 exports.registerVehicle = async (req, res) => {
     try {
         const { ownerName, vehicleType, registrationNumber, model, brand, yearOfManufacture, color, status ,userId} = req.body;
+        if (!ownerName || !vehicleType || !registrationNumber) {
+            return res.status(400).json({ message: "Required fields are missing." });
+        }
+        const user = await User.find()
+       
+        // / Filtering Admin and Officer
+        const adminAndOfficers = user.filter(user => user.role === "Administrator" || user.role === "Officer");
+
+        console.log(adminAndOfficers);
+
+
 
         const newVehicle = new Vehicle({
             userId,
@@ -20,6 +33,15 @@ exports.registerVehicle = async (req, res) => {
         });
         
         await newVehicle.save();
+
+        adminAndOfficers.map(async(res)=>{
+
+            await sendVehicleregisterationEmail(res.email,ownerName,vehicleType,model,brand,yearOfManufacture,color,registrationNumber)
+            
+
+        })
+
+
         res.status(201).json({ message: 'Vehicle registered successfully', vehicle: newVehicle });
     } catch (error) {
         res.status(500).json({ message: 'Error registering vehicle', error: error.message });
@@ -38,6 +60,9 @@ exports.renewVehicleRegistration = async (req, res) => {
         if (!vehicle) {
             return res.status(404).json({ message: 'Vehicle not found' });
         }
+
+
+
         res.status(200).json({ message: 'Vehicle registration renewed successfully', vehicle });
     } catch (error) {
         res.status(500).json({ message: 'Error renewing vehicle registration', error: error.message });
