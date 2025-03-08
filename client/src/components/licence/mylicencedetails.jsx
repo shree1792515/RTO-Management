@@ -47,6 +47,7 @@ const LicenseDetails = () => {
       console.log(data);
       
       setLicense(data[0]) 
+      
     }
 
     fetchLicenses()

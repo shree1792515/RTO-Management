@@ -36,6 +36,7 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/profile" element={<ProfileCard />} />
+          <Route path="/admin/register" element={<AdminSignup />} />
           {/* /profile */}
 
           {/*  admin */}
@@ -43,7 +44,7 @@ function App() {
             user?.role === "Administrator" && (
               <>
                 <Route path="/admin" element={<AdminPage />} />
-                <Route path="/admin/register" element={<AdminSignup />} />
+               
                 <Route path="/admin/userlist" element={<UserList />} />
                 <Route path="/admin/appointments" element={<AppointmentsList />} />
                 <Route path="/admin/licenses" element={<LicenseList />} />

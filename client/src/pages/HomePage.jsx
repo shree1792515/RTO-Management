@@ -10,7 +10,7 @@ const HomePage = () => {
                     <h1>Welcome to the RTO Management System</h1>
                     <p>Your one-stop solution for all transport-related services.</p>
                     <Link to="/login">
-                        <Button variant="primary" size="lg">Login</Button>
+                        <Button variant="warning" size="lg">Login</Button>
                     </Link>
                     <Link to="/signup" className="ml-3">
                         <Button variant="secondary" size="lg">Sign Up</Button>
