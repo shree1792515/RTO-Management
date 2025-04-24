@@ -7,7 +7,7 @@ const upload = require('../middleware/multer');
 router.post('/apply', upload.single('documents'), licenseController.applyForLicense);
 
 // Route to renew an existing driving license
-router.post('/renew', licenseController.renewLicense);
+
 
 // Route to get the status of a driving license application
 router.get('/status/:id', licenseController.trackLicenseStatus);
@@ -21,5 +21,9 @@ router.get('/status/:id', licenseController.trackLicenseStatus);
 router.get('/', licenseController.getLicense);//
 router.get('/:id', licenseController.getLicenseforUserid);
 router.put('/:id', licenseController.updateLicensestatus);
+router.put('/renew/licence', licenseController.renewLicense); // POST or PUT based on your logic
+router.get('/generate-e-license/:licenseNumber', licenseController.generateELicense);
+
+
 
 module.exports = router;

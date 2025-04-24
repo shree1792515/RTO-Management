@@ -22,6 +22,9 @@ const statusOptions = [
   { value: "Pending", label: "Pending", color: "#4CAF50" }, // Green
   { value: "Rejected", label: "Rejected", color: "#F44336" }, // Red
   { value: "suspended", label: "Suspended", color: "#FF9800" }, // Orange
+  { value: "completed", label: "completed", color: "#0288d1" },// Blue
+  { value: "Renewed", label: "Renewed", color: "#1976d2" },// Blue
+  { value: "RenewedRequest", label: "RenewedRequest", color: "#2196F3" },// 
 ];
 
 const LicenseList = () => {
