@@ -27,7 +27,6 @@ const AdminDashboard = () => {
     fetchStats();
   }, []);
 
-  console.log(stats);
   
 
 

@@ -51,6 +51,7 @@ function App() {
                 <Route path="/admin/totalreports" element={<ReportsList />} />
                 <Route path="/admin/vehicles" element={<VehicleList />} />
                 <Route path="/admin/vehicles" element={<VehicleList />} />
+                 <Route path="/officer/register" element={<VehicleList />} />
                 {/* /officer/register */}
               </>
 

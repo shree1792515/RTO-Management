@@ -23,9 +23,7 @@ const AdminPage = () => {
     const nagateadminRegister=()=>{
         navigate('/admin/register');
     }
-    const navigateofficerRegister=()=>{
-        navigate('/officer/register');
-    }
+  
 
     
 
@@ -57,9 +55,7 @@ const AdminPage = () => {
                     <ListItem button>
                         <ListItemText primary="create admin" onClick={nagateadminRegister} />
                     </ListItem>
-                    <ListItem button>
-                        <ListItemText primary="create Officer" onClick={navigateofficerRegister} />
-                    </ListItem>
+                  
                 </List>
             </Drawer>
 
