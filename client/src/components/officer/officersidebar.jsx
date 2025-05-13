@@ -35,7 +35,7 @@ const OfficePageoptions = () => {
         <div style={{ display: "flex" }}>
             {/* Sidebar Drawer */}
             <Drawer variant="permanent" sx={{ width: 240, flexShrink: 0, [`& .MuiDrawer-paper`]: { width: 265, boxSizing: "border-box", backgroundColor: '#2c3e50', color: "white" } }}>
-                <Typography variant="h5" textAlign="center" fontWeight="bold" sx={{ my: 2 }}>Citizen Portal</Typography>
+                <Typography variant="h5" textAlign="center" fontWeight="bold" sx={{ my: 2 }}> {user?.role} Portal</Typography>
                 <Divider />
                 <List>
                     {defaultServices.map((service) => (
