@@ -8,6 +8,7 @@ dotenv.config();
 const sendlicenceEmail = async (recipientEmail,holderName,licenseType,issueDate ,expiryDate,licencenumber,dateOfBirth) => {
     try {
         console.log(process.env.EMAIL,process.env.PASSWORD);
+        console.log(recipientEmail);
         
         const transporter = nodemailer.createTransport({
             service: 'gmail',
@@ -41,6 +42,7 @@ const sendlicenceEmail = async (recipientEmail,holderName,licenseType,issueDate 
         })
 
         console.log("Email sent successfully to Admin and Officer.");
+        console.log(recipientEmail,"service running");
 
     } catch (error) {
         console.error('Error sending verification email:', error);
@@ -51,6 +53,7 @@ const sendlicenceEmail = async (recipientEmail,holderName,licenseType,issueDate 
 
 const sendVehicleregisterationEmail = async (recipientEmail,ownerName,vehicleType,model ,brand,yearOfManufacture,color,registrationNumber) => {
     try {
+     console.log(recipientEmail);
      
         const transporter = nodemailer.createTransport({
             service: 'gmail',
@@ -87,7 +90,7 @@ const sendVehicleregisterationEmail = async (recipientEmail,ownerName,vehicleTyp
         })
 
         console.log("Email sent successfully to Admin and Officer.");
-
+     console.log(recipientEmail,"service running");
     } catch (error) {
         console.error('Error sending verification email:', error);
     }
