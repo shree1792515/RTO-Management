@@ -11,7 +11,7 @@ router.get('/analytics',adminController.getAnalytics);
 // router.post('/user/roles', authMiddleware.verifyAdmin, adminController.manageUserRoles);
 
 // Route to get reports
-// router.get('/reports', authMiddleware.verifyAdmin, adminController.getReports);
+router.get('/reports', adminController.getReports);
 
 // Route to fetch all users
 router.get('/users', adminController.getAllUsers);

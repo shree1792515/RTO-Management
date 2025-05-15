@@ -19,6 +19,7 @@ import ReportsList from './components/reports/reportlist';
 import VehicleList from './components/vehicle/vehiclelist';
 import Unauthorized from './unauthorized';
 import ProfileCard from './profile';
+import AdminReport from './components/reports/Adminreports';
 
 const user = JSON.parse(localStorage.getItem('user'))?.user;
 
@@ -52,6 +53,9 @@ function App() {
                 <Route path="/admin/vehicles" element={<VehicleList />} />
                 <Route path="/admin/vehicles" element={<VehicleList />} />
                  <Route path="/officer/register" element={<VehicleList />} />
+                 <Route path="/admin/reports" element={<AdminReport />} />
+
+                 {/* AdminReport */}
                 {/* /officer/register */}
               </>
 

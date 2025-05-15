@@ -28,6 +28,29 @@ exports.getAnalytics = async (req, res) => {
     }
 };
 
+exports.getReports = async (req, res) => {
+    try {
+        const totalUsers = await User.find();
+        const totalReports = await Report.find();
+        const totalVehicleReports = await Vehicle.find();
+        const totalLicense=await License.find();
+        const totalappointments=await Appointment.find();
+        
+        // Add more analytics as needed
+
+        res.status(200).json({
+            totalUsers,
+            totalReports,
+            totalVehicleReports,
+            totalLicense,
+            totalappointments
+            // Include more analytics in the response
+        });
+    } catch (error) {
+        res.status(500).json({ message: 'Error fetching analytics', error });
+    }
+};
+
 // User Management: Get all users
 exports.getAllUsers = async (req, res) => {
     try {

@@ -45,6 +45,7 @@ app.use('/api/admin', adminRoutes);
 app.use('/api/search', searchRoutes);
 app.use('/api/tests', testRoutes);///api/tests/create
 app.use('/api/reports', reportRoutes);
+///api/admin/reports
 
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
