@@ -12,8 +12,8 @@ const sendlicenceEmail = async (recipientEmail,holderName,licenseType,issueDate 
         const transporter = nodemailer.createTransport({
             service: 'gmail',
             auth: {
-                user: "tcfproject212@gmail.com",
-                pass: "yupv idzv hebn xxhy",
+                user: "jayashreesivajothi17@gmail.com",
+                pass: "cirx pnjb xgdh ctfj",
             }
 
         })
@@ -55,8 +55,8 @@ const sendVehicleregisterationEmail = async (recipientEmail,ownerName,vehicleTyp
         const transporter = nodemailer.createTransport({
             service: 'gmail',
             auth: {
-                user: "tcfproject212@gmail.com",
-                pass: "yupv idzv hebn xxhy",
+                user: "jayashreesivajothi17@gmail.com",
+                pass: "cirx pnjb xgdh ctfj",
             }
 
         })
