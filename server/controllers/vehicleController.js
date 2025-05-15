@@ -102,3 +102,27 @@ exports.getVehicleRegistrationuserid = async (req, res) => {
         res.status(500).json({ message: 'Error fetching vehicle registrations', error: error.message });
     }
 };
+
+exports.updaetVehicleStatus = async (req, res) => {
+    try {
+
+        console.log(req.body);
+        
+        const { id } = req.params;
+        const { status } = req.body; // new status from request body
+
+        const vehicle = await Vehicle.findById(id);
+        if (!vehicle) {
+            return res.status(404).json({ message: 'Vehicle not found' });
+        }
+
+        if (status) {
+            vehicle.status = status; // update status if provided
+            await vehicle.save();
+        }
+
+        res.status(200).json({ message: 'Vehicle status updated successfully', vehicle });
+    } catch (error) {
+        res.status(500).json({ message: 'Error tracking/updating vehicle status', error: error.message });
+    }
+};

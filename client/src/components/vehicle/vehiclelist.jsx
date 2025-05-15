@@ -20,7 +20,7 @@ import axios from "axios";
 import moment from "moment";
 import { jsPDF } from "jspdf";
 import * as XLSX from "xlsx";
-import { fetchVehicleRegistrations } from "../../services/vehicleService";
+import { fetchVehicleRegistrations, updateVehicleStatus } from "../../services/vehicleService";
 
 const VehicleList = () => {
   const [vehicles, setVehicles] = useState([]);
@@ -45,6 +45,10 @@ const VehicleList = () => {
   const handleStatusChange = async (id, newStatus) => {
     try {
       await updateVehicleStatus(id, newStatus);
+//
+
+
+
       setVehicles((prev) => prev.map((v) => (v._id === id ? { ...v, status: newStatus } : v)));
     } catch (error) {
       console.error("Error updating status:", error);

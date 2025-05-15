@@ -11,6 +11,8 @@ router.post('/renew', vehicleController.renewVehicleRegistration);
 
 // Route for tracking vehicle registration status
 router.get('/status/:id', vehicleController.trackVehicleStatus);
+router.put('/status/:id', vehicleController.updaetVehicleStatus);
+
 
 router.get('/all', vehicleController.getVehicleRegistrations);
 // getVehicleRegistrationuserid

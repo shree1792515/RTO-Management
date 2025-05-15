@@ -66,3 +66,14 @@ export const fetchVehicleRegistrationsspecificuser = async (userId) => {
         throw new Error(error.response.data.message || 'Error fetching vehicle registrations');
     }
 };
+
+export const updateVehicleStatus = async (id,status) => {
+    try {
+        const response = await axios.put(`${API_URL}status/${id}`,{status});
+      //http://localhost:5000/api/vehicles/status/:id
+        
+        return response.data;
+    } catch (error) {
+        throw new Error(error.response.data.message || 'Error fetching vehicle registrations');
+    }
+};

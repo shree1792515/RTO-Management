@@ -37,7 +37,7 @@ const reportRoutes = require('./routes/reportRoutes');
 // Use routes
 app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
-app.use('/api/vehicles', vehicleRoutes);
+app.use('/api/vehicles', vehicleRoutes);//http://localhost:5000/api/vehicles/status/:id
 app.use('/api/licenses', licenseRoutes);   
 app.use('/api/appointments', appointmentRoutes);
 app.use('/api/notifications', notificationRoutes);
