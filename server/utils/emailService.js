@@ -97,8 +97,13 @@ const sendVehicleregisterationEmail = async (recipientEmail,ownerName,vehicleTyp
 }
 
 
+function queryEmail (recipientEmail, subject, content) {
+
+    console.log(`Sending email to ${recipientEmail} with subject "${subject}" and content "${content}"`);
+    
 
 
+}
 
 module.exports = {
 
