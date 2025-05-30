@@ -48,6 +48,7 @@ app.use('/api/reports', reportRoutes);
 ///api/admin/reports
 
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+console.log('Uploads directory is set to serve static files from /uploads');
 
 // Start server
 const PORT = process.env.PORT || 5000;
